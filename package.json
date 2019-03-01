@@ -1,7 +1,7 @@
 {
   "name": "nightwatch-ci-html-reporter",
   "description": "Generates an HTML view of the Nightwatch.js test reports using the Nightwatch reporter options.",
-  "version": "1.0.0",
+  "version": "0.9.0",
   "homepage": "https://github.com/rpii/nightwatch-ci-html-reporter",
   "author": {
     "name": "Rich Peters",
