@@ -1,4 +1,4 @@
-# nightwatch-ext-html-reporter
+# nightwatch-ci-html-reporter
 
 
 Generates an HTML report of the Nightwatch.js test using the Nightwatch reporter options.  
@@ -9,7 +9,7 @@ This package is based upon the work of Denis Denisov https://bl.ocks.org/denji/2
 
 For **for all versions of Nightwatch**
 ```
-npm install nightwatch-ext-html-reporter
+npm install nightwatch-ci-html-reporter
 ```
 
 ## Usage
@@ -20,7 +20,7 @@ _Requires Nightwatch >= 1.0.19._
 
 ```javascript
 /* In nightwatch/globals.js */
-var HtmlReporter = require('nightwatch-ext-html-reporter');
+var HtmlReporter = require('nightwatch-ci-html-reporter');
 var reporter = new HtmlReporter({
 	openBrowser: true,
 	reportsDirectory: __dirname + '/reports'
@@ -71,11 +71,6 @@ you can edit/copy `lib/themes/default/report.pug` which contains the markup for 
 
 Theme options that are available on command line and in the options block:
 * default
-* default-gray
-* compact
-* compact-gray
-* cover
-* outlook
 
 
 ## Example Reports

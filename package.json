@@ -1,18 +1,18 @@
 {
-  "name": "nightwatch-ext-html-reporter",
+  "name": "nightwatch-ci-html-reporter",
   "description": "Generates an HTML view of the Nightwatch.js test reports using the Nightwatch reporter options.",
   "version": "1.0.0",
-  "homepage": "https://github.com/rpii/nightwatch-ext-html-reporter",
+  "homepage": "https://github.com/rpii/nightwatch-ci-html-reporter",
   "author": {
     "name": "Rich Peters",
     "email": "rpeters@sandia.gov"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/rpii/nightwatch-ext-html-reporter.git"
+    "url": "git://github.com/rpii/nightwatch-ci-html-reporter.git"
   },
   "bugs": {
-    "url": "https://github.com/rpii/nightwatch-ext-html-reporter/issues"
+    "url": "https://github.com/rpii/nightwatch-ci-html-reporter/issues"
   },
   "license": "MIT",
   "main": "lib/html-reporter",
@@ -49,7 +49,7 @@
   ],
   "preferGlobal": "true",
   "bin": {
-    "nightwatch-ext-html-reporter": "lib/cli.js"
+    "nightwatch-ci-html-reporter": "lib/cli.js"
   },
   "jest": {
     "runner": "jest-runner-nightwatch"
