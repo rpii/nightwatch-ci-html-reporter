@@ -19,39 +19,39 @@ npm install nightwatch-ci-html-reporter
 _Requires Nightwatch >= 1.0.19._
 
 ```javascript
-/* In nightwatch/globals.js */
-var HtmlReporter = require('nightwatch-ci-html-reporter');
-var reporter = new HtmlReporter({
-	openBrowser: true,
-	reportsDirectory: __dirname + '/reports'
-});
-module.exports = {
-	reporter: reporter.fn
-};
-```
+/* In globals.js */
+const HtmlReporter = require('nightwatch-ci-html-reporter');
 
+const htmlReporter = new HtmlReporter({
+    openBrowser: true,
+    reportTitle: "Your Portal"
+});
+
+var self = module.exports = {
+
+    "reporter" : htmlReporter.fn,
+```
 
 ## Options
 
 ```javascript
 {
 	/* Title of the test report */
-	reportTitle: "Your Title Here",    
+	reportTitle: "Your Title Here",  
+	  
 	/* True or False.  If true the generated html will be opened
 		in your browser after the test run. */
 	openBrowser: true,
 
-	/* The directory you've set nightwatch to store your reports.
-		On the CLI this determines where we read reports from, but on this
-		interface it determines where the generated report will be saved. */
+	/* The directory you've set nightwatch to store your reports. */
 	reportsDirectory: __dirname + '/reports',
 
 	/* A prefix inserted in the front of the base filename. */
 	reportFilenamePrefix: '',
 	
-	/* Relative path to custom theme. When this is given,
-	`themeName` will be ignored. */
-	customTheme: 'relative/path/to/theme.html',
+	/* Create unique report names */
+	uniqueFilename: true,
+	
 	/* Boolean.  If true we ensure the generated report filename
 		is unique by appending a timestamp to the end. */
 	uniqueFilename: false,
@@ -70,12 +70,14 @@ module.exports = {
 
 ## Available Themes
 
-You can see examples of all of the available themes below.  You can also create your own theme by copying an existing
-theme directory and editing the styles.css file.  If you want to also change the structure of the html generated
-you can edit/copy `lib/themes/default/report.pug` which contains the markup for the majority of themes.
+You can see examples of all of the available themes below.  You can also create your own theme by creating a new folder under the them folder and copying the styles.css and html-report.html.
+The file 'lib/themes/default/html-report.html` is a handlebars template for the default theme. It is fairly easy to modify. The default uses featherlight for lightboxes for the screenshots.
 
 Theme options that are available on command line and in the options block:
 * default
+* seLion
+* yourtheme
+ 
 
 
 ## Example Reports
