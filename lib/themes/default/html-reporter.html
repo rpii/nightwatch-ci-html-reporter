@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+
+    <title>{{title}}Test Results - {{browser}}</title>
+    <link href="{{html_path}}/scripts/featherlight/featherlight.min.css" rel="stylesheet" type="text/css"/>
+    <link href="{{html_path}}/scripts/featherlight/featherlight.gallery.min.css" rel="stylesheet" type="text/css"/>
+    <link href="{{html_path}}/css/report.css" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+<h1>{{title}}</h1>
+
+<table border="0" cellpadding="0" cellspacing="0">
+    <tr class="overview">
+        <td colspan="3" title="{{browser}}"><strong>Browser:</strong> {{browser}}</td>
+    </tr>
+    <tr class="overview">
+        <td colspan="3"><strong>Timestamp:</strong> {{timestamp}}</td>
+    </tr>
+    <tr class="overview last">
+        <td colspan="3"><strong>Tests:</strong> {{results.tests}}<br></td>
+    </tr>
+    <tr>
+        <td class="pass"><strong>{{results.passed}}</strong> passed</td>
+        <td class="skip"><strong>{{results.errors}}</strong> errors</td>
+        <td class="fail"><strong>{{results.failed}}</strong> failures</td>
+    </tr>
+</table>
+
+{{#each results.modules}}
+<h2>{{@key}}</h2>
+
+{{#each this.completed}}
+<h3>{{@key}}</h3>
+<ul class="assertions">
+    {{#each this.assertions}}
+    <li>
+        {{#if failure}}
+        <span class="error">&#10006;</span>
+        {{else}}
+        <span class="success">&#10004;</span>
+        {{/if}}
+        {{#if this.screenshots}}
+        {{#each this.screenshots}}
+        {{image this}}
+        {{/each}}
+        {{/if}}
+        {{this.message}}
+
+        {{#if this.failure}}
+        {{this.failure}}
+        {{/if}}
+
+        {{#if this.stacktrace}}
+        <div class="stacktrace">
+            <a href="#">view stacktrace</a>
+            <code>
+                <pre>{{this.stacktrace}}</pre>
+            </code>
+        </div>
+        {{/if}}
+    </li>
+    {{/each}}
+    <section data-featherlight-gallery data-featherlight-filter="a">
+        <div class='gallery-row-title'>
+            <h4>{{@key}} Screenshots</h4>
+        </div>
+        <div class='gallery-row'>
+            {{#each this.assertions}}
+            {{#if this.screenshots}}
+            {{#each this.screenshots}}
+            {{gallery this}}
+            {{/each}}
+            {{/if}}
+            {{/each}}
+        </div>
+    </section>
+</ul>
+
+<p>
+    {{#if this.failed}}
+    <span class="error"><strong>FAILED:</strong></span>
+    <span class="error"><strong>{{this.failed}}</strong></span> assertions failed and
+    <span class="success"><strong>{{this.passed}}</span></strong> passed. ({{this.time}}s)
+    {{else}}
+    <span class="success"><strong>OK.</strong></span>
+    <span class="success"><strong>{{this.passed}}</strong></span> assertions passed. ({{this.time}}s)
+    {{/if}}
+</p>
+{{/each}}
+
+{{#if this.skipped}}
+<h4>skipped</h4>
+<ul>
+    {{#each this.skipped}}
+    <li>{{this}}</li>
+    {{/each}}
+</ul>
+{{/if}}
+
+<hr>
+{{/each}}
+
+<div id="nightwatch-logo"></div>
+
+<script src="{{html_path}}/scripts/jquery.min.js" type="text/javascript"></script>
+<script src="{{html_path}}/scripts/featherlight/featherlight.min.js" type="text/javascript"></script>
+<script src="{{html_path}}/scripts/featherlight/featherlight.gallery.min.js" type="text/javascript"></script>
+<script>
+    $(function () {
+        $('div.stacktrace').on('click', 'a', function (evt) {
+            evt.preventDefault();
+
+            var $link = $(this);
+            var $code = $link.parent().find('code');
+
+            $code.is(':visible') ? $link.text('hide stacktrace') :
+                $link.text('view stacktrace');
+
+            $code.toggle();
+
+            $('a.gallery').featherlightGallery({
+                previousIcon  : '«',
+                nextIcon      : '»',
+                galleryFadeIn : 100,          /* fadeIn speed when slide is loaded */
+                galleryFadeOut: 300          /* fadeOut speed before slide is loaded */
+            });
+        });
+    });
+
+    function displayImage(src, title) {
+        "use strict";
+        const imageDialog = $("#dialog");
+        const imageTag = $('#fullscreen-image');
+        console.log("src:" + src);
+
+        imageTag.attr('src', src);
+
+        imageDialog.dialog({
+            modal    : true,
+            resizable: true,
+            draggable: false,
+            width    : 'auto',
+            title    : title
+        });
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+{
+  "name": "nightwatch-ext-html-reporter",
+  "description": "Generates an HTML view of the Nightwatch.js test reports using the Nightwatch reporter options.",
+  "version": "1.0.0",
+  "homepage": "https://github.com/rpii/nightwatch-ext-html-reporter",
+  "author": {
+    "name": "Rich Peters",
+    "email": "rpeters@sandia.gov"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/rpii/nightwatch-ext-html-reporter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rpii/nightwatch-ext-html-reporter/issues"
+  },
+  "license": "MIT",
+  "main": "lib/html-reporter",
+  "scripts": {
+    "test": "nodeunit test",
+    "lint": "eslint ./"
+  },
+  "dependencies": {
+    "async": "^2.1.4",
+    "lodash": "^4.9.0",
+    "nconf": "^0.8.4",
+    "opn": "^5.4.0",
+    "nightwatch": "^1.0.19"
+  },
+  "devDependencies": {
+    "babel-eslint": "^7.2.2",
+    "defaults": "^1.0.3",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.10.3",
+    "handlebars": "^4.1.0",
+    "nodeunit": "^0.11.0"
+  },
+  "keywords": [
+    "nightwatch",
+    "nightwatchjs",
+    "reporter",
+    "generator",
+    "report generator",
+    "html reporter",
+    "custom reporter"
+  ],
+  "preferGlobal": "true",
+  "bin": {
+    "nightwatch-ext-html-reporter": "lib/cli.js"
+  },
+  "jest": {
+    "runner": "jest-runner-nightwatch"
+  },
+  "jest-runner-nightwatch": {
+    "cliOptions": {
+      "config": "./nightwatch.conf.js",
+      "env": "default",
+      "reporter": "./html-reporter.js"
+    }
+  }
+}
