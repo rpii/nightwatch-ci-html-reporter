@@ -36,6 +36,7 @@
     "eslint-plugin-jsx-a11y": "^4.0.0",
     "eslint-plugin-react": "^6.10.3",
     "handlebars": "^4.1.0",
+    "moment": "^2.24.0",
     "nodeunit": "^0.11.0"
   },
   "keywords": [

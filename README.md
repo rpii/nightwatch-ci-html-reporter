@@ -35,6 +35,8 @@ module.exports = {
 
 ```javascript
 {
+	/* Title of the test report */
+	reportTitle: "Your Title Here",    
 	/* True or False.  If true the generated html will be opened
 		in your browser after the test run. */
 	openBrowser: true,
@@ -44,9 +46,12 @@ module.exports = {
 		interface it determines where the generated report will be saved. */
 	reportsDirectory: __dirname + '/reports',
 
-	/* The filename that the html report will be saved as. */
-	reportFilename: 'generatedReport.html',
-
+	/* A prefix inserted in the front of the base filename. */
+	reportFilenamePrefix: '',
+	
+	/* Relative path to custom theme. When this is given,
+	`themeName` will be ignored. */
+	customTheme: 'relative/path/to/theme.html',
 	/* Boolean.  If true we ensure the generated report filename
 		is unique by appending a timestamp to the end. */
 	uniqueFilename: false,
@@ -78,7 +83,6 @@ Theme options that are available on command line and in the options block:
 ---
 ### Default Theme (default)
 
-![ScreenShot](https://raw.githubusercontent.com/jls/nightwatch-html-reporter/screenshots/screenshots/default.png)
 
 ## License
 Copyright (c) 2019 Rich Peters
