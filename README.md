@@ -6,7 +6,7 @@ Initially I looked at the work of Denis Denisov https://bl.ocks.org/denji/204690
 It was missing good support for screenshots, but had other good features, such as use of handlebars.
 I looked at the  work by James Smith in nightwatch-html-reporter https://www.npmjs.com/package/nightwatch-html-reporter.  
 I decided to use this as a basis for the project structure, and utilized the integration into nightwatch demonstrated there.  
-This project is not a fork of either project but rather an integration of the handlebars technology to create a nice report.  
+This project is not a fork of either project but rather an integration of the handlebars technology into James reporter framework.  
 
 ## Installation
 
