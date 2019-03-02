@@ -1,13 +1,16 @@
 # nightwatch-ci-html-reporter
 
 
-Generates an HTML report of the Nightwatch.js test using the Nightwatch reporter options.  
-
-This package is based upon the work of Denis Denisov https://bl.ocks.org/denji/204690bf21ef65ac7778 to create a html-reporter for nightwatch.  I used the work by James Smith in nightwatch-html-reporter as a basis for the project structure, and utilized the integration into nightwatch demonstrated there.  This project is not a fork of either project but rather an integration of the handlebars technoly to create a nice report.  I was attemping to create reports that are similar to the SeLion java automated test framework. 
+This pacage generates an HTML report of the Nightwatch.js test using the Nightwatch reporter options. 
+Initially I looked at the work of Denis Denisov https://bl.ocks.org/denji/204690bf21ef65ac7778 to create a html-reporter for nightwatch. 
+It was missing good support for screenshots, but had other good features, such as use of handlebars.
+I looked at the  work by James Smith in nightwatch-html-reporter https://www.npmjs.com/package/nightwatch-html-reporter.  
+I decided to use this as a basis for the project structure, and utilized the integration into nightwatch demonstrated there.  
+This project is not a fork of either project but rather an integration of the handlebars technology to create a nice report.  
 
 ## Installation
 
-For **for all versions of Nightwatch**
+**For for all versions of Nightwatch**
 ```
 npm install nightwatch-ci-html-reporter
 ```
@@ -19,7 +22,7 @@ npm install nightwatch-ci-html-reporter
 _Requires Nightwatch >= 1.0.19._
 
 ```javascript
-/* In globals.js */
+/* Add to  globals.js */
 const HtmlReporter = require('nightwatch-ci-html-reporter');
 
 const htmlReporter = new HtmlReporter({
@@ -27,12 +30,19 @@ const htmlReporter = new HtmlReporter({
     reportTitle: "Your Portal"
 });
 
-var self = module.exports = {
+module.exports = {
 
-    "reporter" : htmlReporter.fn,
+     "reporter" : htmlReporter.fn,
+ 
+     "beforeEach": function(browser, done) {
+        htmlReporter.setBrowserOptions( browser.options);
+        done();
+     }
+}
+    
 ```
 
-## Options
+## Reporter Options
 
 ```javascript
 {
