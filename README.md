@@ -1,12 +1,12 @@
 # nightwatch-ci-html-reporter
 
 
-This pacage generates an HTML report of the Nightwatch.js test using the Nightwatch reporter options. 
+This package generates an HTML report of the Nightwatch.js test using the Nightwatch reporter options. 
 Initially I looked at the work of Denis Denisov https://bl.ocks.org/denji/204690bf21ef65ac7778 to create a html-reporter for nightwatch. 
 It was missing good support for screenshots, but had other good features, such as use of handlebars.
 I looked at the  work by James Smith in nightwatch-html-reporter https://www.npmjs.com/package/nightwatch-html-reporter.  
 I decided to use this as a basis for the project structure, and utilized the integration into nightwatch demonstrated there.  
-This project is not a fork of either project but rather an integration of the handlebars technology into James reporter framework.  
+This project is not a fork of either project but rather an integration of the handlebars technology into Jame's reporter framework.  
 
 ## Installation
 
@@ -33,7 +33,8 @@ const htmlReporter = new HtmlReporter({
 module.exports = {
 
      "reporter" : htmlReporter.fn,
- 
+     
+     //gets the browser options into the report
      "beforeEach": function(browser, done) {
         htmlReporter.setBrowserOptions( browser.options);
         done();
