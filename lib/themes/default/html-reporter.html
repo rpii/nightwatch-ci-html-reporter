@@ -45,9 +45,9 @@
         <span class="success">&#10004;</span>
         {{/if}}
         {{#if this.screenshots}}
-        {{#each this.screenshots}}
-        {{image this}}
-        {{/each}}
+            {{#each this.screenshots}}
+                {{image this this.message}}
+            {{/each}}
         {{/if}}
         {{this.message}}
 
@@ -73,7 +73,8 @@
             {{#each this.assertions}}
                 {{#if this.screenshots}}
                     {{#each this.screenshots}}
-                        {{gallery this}}
+                        {{debug }}
+                        {{gallery this this.message}}
                     {{/each}}
                 {{/if}}
             {{/each}}
@@ -132,22 +133,13 @@
         });
     });
 
-    function displayImage(src, title) {
-        "use strict";
-        const imageDialog = $("#dialog");
-        const imageTag = $('#fullscreen-image');
-        console.log("src:" + src);
+    $.featherlightGallery.prototype.afterContent = function() {
+        debugger
+        var caption = this.$currentTarget.find('img').attr('alt');
+        this.$instance.find('.caption').remove();
+        $('<div class="caption">').text(caption).appendTo(this.$instance.find('.featherlight-content'));
+    };
 
-        imageTag.attr('src', src);
-
-        imageDialog.dialog({
-            modal    : true,
-            resizable: true,
-            draggable: false,
-            width    : 'auto',
-            title    : title
-        });
-    }
 </script>
 </body>
 </html>
