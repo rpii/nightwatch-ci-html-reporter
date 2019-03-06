@@ -78,9 +78,32 @@ span.success    { color: #53891E; }
     padding: 5px;
     box-sizing: border-box;
 }
-.inline { display: none }
-.caption {line-height: 28px; color: black; text-align:center; }
+.inline {
+    display: none
+}
 
+.caption {
+    margin-top: -25px;
+    margin-bottom: 4px;
+    color: black;
+    text-align:center;
+}
+.featherlight .featherlight-close-icon {
+    position: absolute;
+    z-index: 9999;
+    top: 0;
+    right: 0;
+    line-height: 28px;
+    width: 25px;
+    cursor: pointer;
+    text-align: center;
+    font-family: Arial,sans-serif;
+    background: #fff;
+    background: rgba(255,255,255,.3);
+    color: #000;
+    border: 0;
+    padding: 0;
+}
 /*.featherlight-content {*/
     /*min-width: 75% !important;*/
     /*min-height: 75% !important;*/
