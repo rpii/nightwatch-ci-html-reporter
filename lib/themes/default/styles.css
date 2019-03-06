@@ -78,6 +78,8 @@ span.success    { color: #53891E; }
     padding: 5px;
     box-sizing: border-box;
 }
+.inline { display: none }
+.caption { position: relative; bottom: 24px; height: 0; color: white }
 
 /*.featherlight-content {*/
     /*min-width: 75% !important;*/
