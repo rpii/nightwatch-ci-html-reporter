@@ -73,7 +73,6 @@
             {{#each this.assertions}}
                 {{#if this.screenshots}}
                     {{#each this.screenshots}}
-                        {{debug }}
                         {{gallery this ../message}}
                     {{/each}}
                 {{/if}}
@@ -86,7 +85,7 @@
     {{#if this.failed}}
     <span class="error"><strong>FAILED:</strong></span>
     <span class="error"><strong>{{this.failed}}</strong></span> assertions failed and
-    <span class="success"><strong>{{this.passed}}</span></strong> passed. ({{this.time}}s)
+    <span class="success"><strong>{{this.passed}}</strong></span> passed. ({{this.time}}s)
     {{else}}
     <span class="success"><strong>OK.</strong></span>
     <span class="success"><strong>{{this.passed}}</strong></span> assertions passed. ({{this.time}}s)
