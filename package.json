@@ -46,7 +46,7 @@
   ],
   "preferGlobal": "true",
   "bin": {
-    "nightwatch-ci-html-reporter": "lib/cli.js"
+    "nightwatch-html-reporter": "lib/cli.js"
   },
   "jest": {
     "runner": "jest-runner-nightwatch"
