@@ -1,12 +1,8 @@
 {
-  "name": "nightwatch-ci-html-reporter",
+  "name": "@rpii/nightwatch-html-reporter",
   "description": "Generates an HTML view of the Nightwatch.js test reports using the Nightwatch reporter options.",
   "version": "0.9.0",
   "homepage": "https://github.com/rpii/nightwatch-ci-html-reporter",
-  "author": {
-    "name": "Rich Peters",
-    "email": "rpeters@sandia.gov"
-  },
   "repository": {
     "type": "git",
     "url": "git://github.com/rpii/nightwatch-ci-html-reporter.git"
@@ -21,6 +17,9 @@
     "lint": "eslint ./"
   },
   "dependencies": {
+    "defaults": "^1.0.3",
+    "handlebars": "^4.1.0",
+    "moment": "^2.24.0",
     "async": "^2.1.4",
     "lodash": "^4.9.0",
     "nconf": "^0.8.4",
@@ -29,14 +28,11 @@
   },
   "devDependencies": {
     "babel-eslint": "^7.2.2",
-    "defaults": "^1.0.3",
     "eslint": "^3.19.0",
     "eslint-config-airbnb": "^14.1.0",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^4.0.0",
     "eslint-plugin-react": "^6.10.3",
-    "handlebars": "^4.1.0",
-    "moment": "^2.24.0",
     "nodeunit": "^0.11.0"
   },
   "keywords": [
