@@ -23,7 +23,7 @@ _Requires Nightwatch >= 1.0.19._
 
 ```javascript
 /* Add to  globals.js */
-const HtmlReporter = require('nightwatch-ci-html-reporter');
+const HtmlReporter = require('@rpii/nightwatch-html-reporter');
 
 const htmlReporter = new HtmlReporter({
     openBrowser: true,
