@@ -1,4 +1,4 @@
-# nightwatch-ci-html-reporter
+# @rpii/nightwatch-html-reporter
 
 
 This package generates an HTML report of the Nightwatch.js test using the Nightwatch reporter options. 
@@ -12,7 +12,7 @@ This project is not a fork of either project but rather an integration of the ha
 
 **For for all versions of Nightwatch**
 ```
-npm install nightwatch-ci-html-reporter
+npm install @rpii/nightwatch-html-reporter
 ```
 
 ## Usage
