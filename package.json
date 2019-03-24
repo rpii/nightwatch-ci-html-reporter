@@ -1,7 +1,7 @@
 {
   "name": "@rpii/nightwatch-html-reporter",
   "description": "Generates an HTML view of the Nightwatch.js test reports using the Nightwatch reporter options.",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "homepage": "https://github.com/rpii/nightwatch-html-reporter",
   "repository": {
     "type": "git",
