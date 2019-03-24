@@ -2,13 +2,13 @@
   "name": "@rpii/nightwatch-html-reporter",
   "description": "Generates an HTML view of the Nightwatch.js test reports using the Nightwatch reporter options.",
   "version": "0.9.0",
-  "homepage": "https://github.com/rpii/nightwatch-ci-html-reporter",
+  "homepage": "https://github.com/rpii/nightwatch-html-reporter",
   "repository": {
     "type": "git",
-    "url": "git://github.com/rpii/nightwatch-ci-html-reporter.git"
+    "url": "git://github.com/rpii/nightwatch-html-reporter.git"
   },
   "bugs": {
-    "url": "https://github.com/rpii/nightwatch-ci-html-reporter/issues"
+    "url": "https://github.com/rpii/nightwatch-html-reporter/issues"
   },
   "license": "MIT",
   "main": "lib/html-reporter",
